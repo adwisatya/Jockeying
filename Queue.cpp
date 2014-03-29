@@ -1,7 +1,4 @@
-#include <iostream>
 #include "Queue.h"
-
-using namespace std;
 
 Queue::Queue(){
     T       =    new int[99];
