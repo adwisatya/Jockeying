@@ -28,5 +28,6 @@ int main(){
 	cout <<xTime << endl;
 	cin  >>xTime;
 	cout <<xTime;
+	cout << endl;
     return 0;
 }
