@@ -1,5 +1,7 @@
 #ifndef _TIME_H
 #define _TIME_H
+#include <iostream>
+using namespace std;
 
 class Time{
 public:
@@ -9,6 +11,8 @@ public:
     Time& operator=(const Time& p);
     bool operator>(const Time& p);
     bool operator==(const Time& p);
+	friend ostream &operator<<(ostream &output,const Time &p);
+	friend istream &operator>>(istream &input, Time &p);
     ~Time();
 
     void setJam(int);

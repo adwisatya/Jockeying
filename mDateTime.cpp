@@ -5,7 +5,6 @@ using namespace std;
 int main(){
     Date Da(14,12,1994);
     Time Ti(19,2,12);
-	int amps;
 
 	DateTime DT(Da,Ti);
 	cout << "Tahun: " << DT.getDate().getTahun()<< endl;
@@ -15,7 +14,11 @@ int main(){
 	cout << "Jam: " << DT.getTime().getJam()<< endl;
 	cout << "Menit: " << DT.getTime().getMenit()<< endl;
 	cout << "Detik: " << DT.getTime().getDetik()<< endl;
-
-	cin >> amps;
+	
+	cout << DT;
+	cout << endl;
+	cin>>DT;
+	cout << endl;
+	cout << DT;
     return 0;
 }

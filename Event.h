@@ -15,8 +15,10 @@ public:
 
 	void setKode(char);
 	void setId(int);
+	void setDateTime(DateTime);
 	char getKode();
 	int  getId();
+	DateTime setDateTime();
 private:
 	DateTime datetime;
     char kode;

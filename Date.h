@@ -1,5 +1,7 @@
 #ifndef _DATE_H
 #define _DATE_H
+#include <iostream>
+using namespace std;
 
 class Date{
 public:
@@ -9,6 +11,8 @@ public:
     Date& operator=(const Date& d);
     bool  operator>(const Date& d);
     bool  operator==(const Date& d);
+	friend ostream &operator<<(ostream &output,const Date &d);
+	friend istream &operator>>(istream &input, Date &d);
     ~Date();
 
     void setTanggal(int);

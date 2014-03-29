@@ -1,4 +1,3 @@
-
 #include "DateTime.h"
 
 using namespace std;
@@ -23,17 +22,34 @@ using namespace std;
     }
     
     bool DateTime::operator>(const DateTime& d){
+        bool status = false;
         if(date > d.date)
-            return true;
+            status = true;
         else if(date == d.date)
-            return btime > d.btime;
-        return false;
+            status = btime > d.btime;
+        return status;
     }
 	
 
     bool DateTime::operator==(const DateTime& d){
         return (date == d.date) && (btime == d.btime);
     }
+	ostream &operator<<(ostream &output,DateTime &dt){
+		Date d;
+		Time t;
+		char sign;
+
+		output << dt.getDate() << ";" << dt.getTime();
+	}
+	istream &operator>>(istream &input, DateTime &dt){
+		Date d;
+		Time t;
+		char tanda;
+		input >> d>>tanda>>t;
+		dt.setDate(d);
+		dt.setTime(t);
+		return input;
+	}
     DateTime::~DateTime(){
     }
     void DateTime::setTime(Time _time){

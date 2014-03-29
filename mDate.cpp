@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Date.h"
 using namespace std;
@@ -24,6 +23,8 @@ int main(){
     cout<< "Bulan: " << bDate.getBulan()<< endl;
     cout << "Tahun: " << bDate.getTahun()<< endl;
     cout<< xDate.operator>(cDate) << endl;
-    //cout << << endl;
+	cout << xDate<< endl;
+	cin >> xDate;
+	cout << xDate;
     return 0;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Date.h"
-
 using namespace std;
+
     Date::Date(){
         tahun   =   0;
         bulan   =   0;
@@ -24,24 +24,36 @@ using namespace std;
         return *this;
     }
     bool Date::operator>(const Date& d){
+        bool status = false;
         if(tahun > d.tahun)
-            return true;
+            status = true;
         else if(tahun == d.tahun)
         {
             if(bulan > d.bulan)
-                return true;
+                status =  true;
             else if(bulan == d.bulan)
-                return tanggal > d.tanggal;
+                status = tanggal > d.tanggal;
         }
 
-        return false;
+        return status;
     }
-
     bool Date::operator==(const Date& t){
         return (tahun == t.tahun) && (bulan == t.bulan) && (tanggal == t.tanggal);
-        //return true;
     }
-
+	ostream &operator<<(ostream &output,const Date &d)
+	{
+		output << d.tanggal << "-" << d.bulan << "-" << d.tahun;
+		return output;
+	}
+	istream &operator>>(istream &input, Date &d){
+		int _tanggal,_bulan,_tahun;
+		char tanda;
+		input >> _tanggal>>tanda>>_bulan>>tanda>>_tahun;
+		d.setTanggal(_tanggal);
+		d.setBulan(_bulan);
+		d.setTahun(_tahun);
+		return input;
+	}
     Date::~Date(){}
     void Date::setTahun(int _tahun){
         this->tahun     =   _tahun;

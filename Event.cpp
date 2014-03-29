@@ -41,6 +41,11 @@ void Event::setId(int _id)
 	this->id =_id;
 }
 
+void Event::setDateTime(DateTime _DT)
+{
+	this->datetime = _DT;
+}
+
 char Event::getKode()
 {
 	return kode;
@@ -48,4 +53,9 @@ char Event::getKode()
 
 int Event::getId(){
 	return id;
+}
+
+DateTime Event::setDateTime()
+{
+	return datetime;
 }

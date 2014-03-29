@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Time.h"
 using namespace std;
@@ -26,5 +25,8 @@ int main(){
 
     cout << cTime.operator>(xTime) << endl;
     cout << cTime.operator==(xTime) << endl;
+	cout <<xTime << endl;
+	cin  >>xTime;
+	cout <<xTime;
     return 0;
 }

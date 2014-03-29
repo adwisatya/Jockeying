@@ -1,7 +1,5 @@
-#include <iostream>
-#include "Time.h"
 
-using namespace std;
+#include "Time.h"
     Time::Time(){
         jam     =   0;
         menit   =   0;
@@ -24,30 +22,36 @@ using namespace std;
         return *this;
     }
     bool Time::operator>(const Time& t){
-        bool status;
+        bool status = false;
         if(jam > t.jam)
-            status= true;
-        else{
-            if(jam == t.jam)
+            status = true;
+        else if(jam == t.jam)
             {
                 if(menit > t.menit)
-                    status=  true;
-                else{
-                    if(detik > t.detik){
-                        status=  true;
-                    }else{
-                        status=  false;
-                    }
-                }
+                    status = true;
+                else
+                    status = detik > t.detik;
             }
-        }
         return status;
     }
 
     bool Time::operator==(const Time& t){
         return (jam == t.jam) && (menit == t.menit) && (detik == t.detik);
     }
-
+	ostream &operator<<(ostream &output,const Time &p)
+	{
+		output << p.jam << ":" << p.menit<< ":" << p.detik;
+		return output;
+	}
+	istream &operator>>(istream &input, Time &p){
+		int _jam,_menit,_detik;
+		char tanda;
+		input >> _jam >> tanda>>_menit>>tanda>>_detik;
+		p.setJam(_jam);
+		p.setMenit(_menit);
+		p.setDetik(_detik);
+		return input;
+	}
     Time::~Time(){
     }
     void Time::setJam(int _jam){
