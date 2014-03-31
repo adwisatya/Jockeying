@@ -16,12 +16,14 @@ Event::Event(DateTime _dateTime, char _kode, int _id)
 
 Event::Event(const Event& E)
 {
+	datetime = E.datetime;
 	kode = E.kode;
 	id = E.id;
 }
 
 Event& Event::operator=(const Event& E)
 {
+	datetime = E.datetime;
 	kode = E.kode;
 	id = E.id;
 	return *this;
