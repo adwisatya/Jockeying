@@ -38,10 +38,18 @@ void Queue::push(int input){
         nElmt++;
     }
 }
-int Queue::pop(){
-    return T[1];
-    nElmt--;
-	Queue Qtemp(nElmt);
+int Queue::pop_front(){
+    int temp	=	T[0];
+	this->nElmt	=	nElmt-1;
+	for(int i=0;i<nElmt;i++){
+		this->T[i] = T[i+1];
+	}
+	return temp;
+}
+int Queue::pop_back(){
+	int temp	=	T[nElmt-1];
+	nElmt	=	nElmt-1;
+	return temp;
 }
 int Queue::size(){
     return nElmt;

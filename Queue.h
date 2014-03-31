@@ -15,7 +15,8 @@ class Queue
         bool isEmpty();
         bool isFull();
         void push(int);
-        int pop();
+        int pop_back();
+		int pop_front();
         int size();
         void Print();
         bool status();
