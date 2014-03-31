@@ -17,13 +17,13 @@ public:
 	~Event();
 	friend ostream &operator<<(ostream &output,const Event &e);
 	friend istream &operator>>(istream &input, Event &e);
+	void setDateTime(DateTime);
 	void setKode(char);
 	void setId(int);
-	void setDateTime(DateTime);
 	DateTime getDateTime();
 	char getKode();
 	int  getId();
-	DateTime setDateTime();
+	
 private:
 	DateTime datetime;
     char kode;
