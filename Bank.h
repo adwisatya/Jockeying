@@ -4,7 +4,7 @@
 class Bank{
 public:
     Bank();
-	Bank(char, int);
+	Bank(DateTime, char, int);
 	Bank(const Bank&);
 	Bank& operator=(const Bank&);
 	~Bank();
