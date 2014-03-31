@@ -14,7 +14,7 @@ public:
     DateTime& operator=(const DateTime& d);
 	bool operator>(const DateTime& d);
     bool operator==(const DateTime& d);
-	friend ostream &operator<<(ostream &output,DateTime &d);
+	friend ostream &operator<<(ostream &output,const DateTime &d);
 	friend istream &operator>>(istream &input,DateTime &d);
     ~DateTime();
     void setTime(Time _time);

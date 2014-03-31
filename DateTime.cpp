@@ -34,12 +34,12 @@ using namespace std;
     bool DateTime::operator==(const DateTime& d){
         return (date == d.date) && (btime == d.btime);
     }
-	ostream &operator<<(ostream &output,DateTime &dt){
+	ostream &operator<<(ostream &output,const DateTime &dt){
 		Date d;
 		Time t;
 		char sign;
 
-		output << dt.getDate() << ";" << dt.getTime();
+		output << dt.date << ";" << dt.btime;
 	}
 	istream &operator>>(istream &input, DateTime &dt){
 		Date d;

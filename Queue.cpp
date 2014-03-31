@@ -33,16 +33,15 @@ bool Queue::isFull(){
     return nElmt==99;
 }
 void Queue::push(int input){
-    if(isFull()){
-
-    }else{
+    if(!isFull()){
         T[nElmt]    =   input;
         nElmt++;
     }
 }
 int Queue::pop(){
-    return T[nElmt];
+    return T[1];
     nElmt--;
+	Queue Qtemp(nElmt);
 }
 int Queue::size(){
     return nElmt;

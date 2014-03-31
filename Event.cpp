@@ -1,7 +1,5 @@
-#include <iostream>
-#include "Event.h"
 
-using namespace std;
+#include "Event.h"
 
 Event::Event()
 {
@@ -28,7 +26,21 @@ Event& Event::operator=(const Event& E)
 	id = E.id;
 	return *this;
 }
-
+ostream &operator<<(ostream &output,const Event &e){
+	output << e.datetime << " " << e.kode<< " " << e.id;
+	return output;
+}
+istream &operator>>(istream &input, Event &e){
+	DateTime dt;
+	char _kode;
+	int _id;
+	char tanda;
+	input >> dt >> tanda>> _kode>>tanda>>_id;
+	e.setDateTime(dt);
+	e.setKode(_kode);
+	e.setId(_id);
+	return input;
+}
 Event::~Event(){}
 
 void Event::setKode(char _kode)
@@ -46,6 +58,9 @@ void Event::setDateTime(DateTime _DT)
 	this->datetime = _DT;
 }
 
+DateTime Event::getDateTime(){
+	return datetime;
+}
 char Event::getKode()
 {
 	return kode;
