@@ -10,10 +10,8 @@ int main()
 	Time T(1,2,3);
 	Date D(4,5,6);
 	DateTime DT(D, T);
-	Event coba;
-	cin >> coba;
-	cout << coba.getDateTime();
-	cout<< coba.getKode();
-	cout << coba.getId();
+	Event event;
+	cin >> event;
+	cout << event;
 	return 0;
 }

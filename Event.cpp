@@ -27,7 +27,11 @@ Event& Event::operator=(const Event& E)
 	return *this;
 }
 ostream &operator<<(ostream &output,const Event &e){
-	output << e.datetime << " " << e.kode<< " " << e.id;
+	output << e.datetime;
+	output << " ";
+	output << e.kode;
+	output << " ";
+	output << e.id;
 	return output;
 }
 istream &operator>>(istream &input, Event &e){
@@ -35,7 +39,13 @@ istream &operator>>(istream &input, Event &e){
 	char _kode;
 	int _id;
 	char tanda;
-	input >> dt >> tanda>> _kode>>tanda>>_id;
+	input >> dt;
+	input >> _kode;
+	if(_kode == 'D'){
+		input >> _id;
+	}else{
+		_id=	0;
+	}
 	e.setDateTime(dt);
 	e.setKode(_kode);
 	e.setId(_id);
@@ -45,17 +55,17 @@ Event::~Event(){}
 
 void Event::setKode(char _kode)
 {
-	this->kode = _kode;
+	kode = _kode;
 }
 
 void Event::setId(int _id)
 {
-	this->id =_id;
+	id =_id;
 }
 
 void Event::setDateTime(DateTime _DT)
 {
-	this->datetime = _DT;
+	datetime = _DT;
 }
 
 DateTime Event::getDateTime(){
