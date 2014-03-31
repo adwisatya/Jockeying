@@ -53,6 +53,11 @@ istream &operator>>(istream &input, Event &e){
 }
 Event::~Event(){}
 
+void Event::setDateTime(DateTime _DT)
+{
+	datetime = _DT;
+}
+
 void Event::setKode(char _kode)
 {
 	kode = _kode;
@@ -63,10 +68,7 @@ void Event::setId(int _id)
 	id =_id;
 }
 
-void Event::setDateTime(DateTime _DT)
-{
-	datetime = _DT;
-}
+
 
 DateTime Event::getDateTime(){
 	return datetime;
@@ -78,9 +80,4 @@ char Event::getKode()
 
 int Event::getId(){
 	return id;
-}
-
-DateTime Event::setDateTime()
-{
-	return datetime;
 }
