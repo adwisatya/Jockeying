@@ -1,29 +1,38 @@
 #ifndef _BANK_H
 #define _BANK_H
+#include "DateTime.h"
+#include "Queue.h"
+#include "Event.h"
+
+using namespace std;
 
 class Bank{
 public:
     Bank();
-	Bank(DateTime, char, int);
+	Bank(DateTime, int);
 	Bank(const Bank&);
 	Bank& operator=(const Bank&);
 	~Bank();
 
 	void setN(int);
 	void setDateTime(DateTime);
-	void setQueue(Queue, i);
+	void setQueue(Queue, int);
 	
 	int getN();
 	DateTime getDateTime();
-	Queue getQueue(i);
+	Queue getQueue(int);
 		
     int Jockeying(int);
-    void Arrival(Event);
-    void Departure(Event);
+    void Arrival(int);
+    void Departure(int);
+	void Print();
+	void Sweep();
+	static int i;
+
 private:
     int N;
     DateTime TMax;
     Queue T[];
-    static int i;
+    
 };
 #endif // _BANK_H
