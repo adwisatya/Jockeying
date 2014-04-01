@@ -2,7 +2,6 @@
 
 int Bank::i=0;
 Bank::Bank(){
-
 }
 Bank::Bank(DateTime datetime, int _N){
 	TMax	=	datetime;
@@ -38,10 +37,10 @@ void Bank::setQueue(Queue queue, int i){
 }
 	
 int Bank::getN(){
-
+	return N;
 }
 DateTime Bank::getDateTime(){
-
+	return TMax;
 }
 Queue Bank::getQueue(int i){
 	return T[i];
