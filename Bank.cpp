@@ -74,17 +74,8 @@ void Bank::Departure(int no){
 void Bank::Print(){
 	for(int i=0;i<N;i++){
 		if(!T[i].isEmpty()){
-			cout << "Q["<< i << "] = ";
-			for(int j=0;j<T[i].size();j++){
-				if(j==0){
-					cout << "{";
-				}else{
-					cout << ",";
-				}
-				cout << T[i].T[j];
-			}
+			this->getQueue(i).Print();
 		}
-
 	}
 }
 void Bank::Sweep(){

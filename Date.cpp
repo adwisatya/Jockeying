@@ -23,6 +23,7 @@ using namespace std;
         tanggal =   d.tanggal;
         return *this;
     }
+
     bool Date::operator>(const Date& d){
         bool status = false;
         if(tahun > d.tahun)

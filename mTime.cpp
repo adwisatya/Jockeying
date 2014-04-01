@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     Time cTime;
     Time xTime(12,2,19);
-    cout << "xDate: " << endl;
+    cout << "x: " << endl;
     cout<< "Detik: " << xTime.getDetik() << endl;
     cout<< "Menit: " << xTime.getMenit()<< endl;
     cout << "Jam: " << xTime.getJam()<< endl;

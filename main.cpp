@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	DateTime temp(Date(0,0,0), Time(0,0,0)), Tmax;
+	DateTime temp, Tmax;
 	int n, no;
 	Event E;
     char c;
@@ -15,27 +15,30 @@ int main()
 	cin >> Tmax;
 	cin >> n;
 
-	Bank bank(n);
-
-	while((temp < Tmax) && (cin >> temp))
+	Bank bank(Tmax, n);
+	while((Tmax > E.getDateTime()) && (cin >> E))
 	{
-		if(temp >= Tmax)
+		if((Tmax > E.getDateTime()) || (E.getDateTime() == Tmax))
 		{
-			cin >> space >> c;
-			if(c == 'A')
+			cout << E << endl;
+			if(E.getKode() == 'D'){
+				bank.Departure(E.getId());
+				cout << "departur";
+			}else
 			{
-				E = new Event(temp, c, 0);
-				bank.Arrival(E);
+				(Bank::i)++;
+				bank.Arrival(Bank::i);
+				cout << " arrival";
 			}
-			else //if(c == D)
-			{
-				cin >> no;
-				E = new Event(temp, c, no);
-				bank.Departure(E);
-			}
+
+			bank.Print();
+			cout << endl;
+			cout << "print";
 		}
 	}
 
-	bank.sweep();
+	cout << "Loop terminate" << endl;
+
+	bank.Sweep();
 	return 0;
 }

@@ -23,6 +23,7 @@ class Queue
     public:
         int* T;
         int nElmt;
+		int nMax;
 };
 
 #endif // QUEUE_H
