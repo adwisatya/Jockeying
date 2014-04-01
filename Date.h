@@ -9,9 +9,8 @@ public:
     Date(int,int,int);
     Date(const Date& d);
     Date& operator=(const Date& d);
-	bool operator<(const Date& d) const;
-    bool  operator>(const Date& d);
-    bool  operator==(const Date& d);
+    bool operator>(const Date& d);
+    bool operator==(const Date& d);
 	friend ostream &operator<<(ostream &output,const Date &d);
 	friend istream &operator>>(istream &input, Date &d);
     ~Date();

@@ -22,9 +22,10 @@ int main(){
     cout<< "Tanggal: " << bDate.getTanggal()<< endl;
     cout<< "Bulan: " << bDate.getBulan()<< endl;
     cout << "Tahun: " << bDate.getTahun()<< endl;
-    cout<< xDate.operator>(cDate) << endl;
+    cout<< "Apakah xData > cDate" << xDate.operator>(cDate) << endl;
 	cout << xDate<< endl;
 	cin >> xDate;
 	cout << xDate;
+    cout<< "Apakah xData == cDate" << xDate.operator==(cDate) << endl;
     return 0;
 }
