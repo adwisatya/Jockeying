@@ -6,10 +6,12 @@ Bank::Bank(){
 Bank::Bank(DateTime datetime, int _N){
 	TMax	=	datetime;
 	N	=	_N;
+	T =  new Queue[N];
 }
 Bank::Bank(const Bank& bank){
 	TMax	=	bank.TMax;
 	N	=	bank.N;
+	T = bank.T;
 	for(int i=0;i<N;i++){
 		T[i] = bank.T[i];
 	}
@@ -17,6 +19,7 @@ Bank::Bank(const Bank& bank){
 Bank& Bank::operator=(const Bank& bank){
 	TMax	=	bank.TMax;
 	N	=	bank.N;
+	*T = *bank.T;
 	for(int i=0;i<N;i++){
 		T[i] = bank.T[i];
 	}
@@ -43,7 +46,7 @@ DateTime Bank::getDateTime(){
 	return TMax;
 }
 Queue Bank::getQueue(int i){
-	return T[i];
+	return this->T[i];
 }
 		
 int Bank::Jockeying(int iOrigin){
@@ -102,4 +105,7 @@ void Bank::Sweep(){
 			}
 		}
 	}while(exist);
+}
+void Bank::Push(int _nQ,int _n){
+	T[_nQ].push(_n);
 }

@@ -27,12 +27,13 @@ public:
     void Departure(int);
 	void Print();
 	void Sweep();
+	void Push(int _nQ,int _n);
 	static int i;
 
 private:
     int N;
     DateTime TMax;
-    Queue T[];
+    Queue *T;
     
 };
 #endif // _BANK_H
