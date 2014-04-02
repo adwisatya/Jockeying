@@ -24,6 +24,7 @@ int main()
 
 			if(E.getKode() == 'D'){
 				bank.Departure(E.getId());
+				
 			}else
 			{
 				

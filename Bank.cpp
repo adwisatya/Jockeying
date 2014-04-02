@@ -50,7 +50,40 @@ Queue Bank::getQueue(int i){
 }
 		
 int Bank::Jockeying(int iOrigin){
+	int iResult = -1, abs1, abs2;
+	for(int i=0; i<N; i++)
+	{
+		if((int(arrayQ[iOrigin].size()) - int(arrayQ[i].size())) > 2)
+		{
+			if(iResult == -1)
+			{
+				iResult = i;
+			}
+			else
+			{
+				if(i - iOrigin > 0)
+					abs1 = i - iOrigin;
+				else
+					abs1 = iOrigin - i;
 
+				if(iResult - iOrigin > 0)
+					abs2 = iResult - iOrigin;
+				else
+					abs2 = iOrigin - iResult;
+				
+				if((abs1 < abs2) || ((abs1 == abs2) && (i < iResult)))
+					iResult = i;
+			}
+		}
+	}
+	if(iResult != -1)
+	{
+		int temp = arrayQ[iOrigin].pop_back();
+		arrayQ[iOrigin].pop_back();
+		arrayQ[iResult].push(temp);
+	}
+
+	return iResult;
 }
 void Bank::Arrival(int intI){
 	int iPush=0;
@@ -64,6 +97,7 @@ void Bank::Arrival(int intI){
 	arrayQ[iPush].push(intI);
 }
 void Bank::Departure(int no){
+
 	int itemp;
 	for(int j =0;j<N;j++){
 		if(arrayQ[j].T[0] == no){
@@ -71,6 +105,7 @@ void Bank::Departure(int no){
 		}
 	}
 	arrayQ[itemp].pop_front();
+	int temp = this->Jockeying(itemp);
 }
 void Bank::Print(){
 	for(int i=0;i<N;i++){
