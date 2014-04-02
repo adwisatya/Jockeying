@@ -16,24 +16,23 @@ int main()
 	cin >> n;
 
 	Bank bank(Tmax, n);
-	while((Tmax > E.getDateTime()) && (cin >> E))
+	while((Tmax.operator>(E.getDateTime())) && (cin >> E))
 	{
-		if((Tmax > E.getDateTime()) || (E.getDateTime() == Tmax))
+		if((Tmax.operator>(E.getDateTime())) || (E.getDateTime().operator==(Tmax)))
 		{
 			cout << E << endl;
+
 			if(E.getKode() == 'D'){
 				bank.Departure(E.getId());
-				cout << "departur";
 			}else
 			{
+				
+				bank.Arrival(Bank::i+1);
 				(Bank::i)++;
-				bank.Arrival(Bank::i);
-				cout << " arrival";
 			}
 
 			bank.Print();
 			cout << endl;
-			cout << "print";
 		}
 	}
 

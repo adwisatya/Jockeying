@@ -33,7 +33,7 @@ public:
 private:
     int N;
     DateTime TMax;
-    Queue *T;
+    Queue *arrayQ;
     
 };
 #endif // _BANK_H
